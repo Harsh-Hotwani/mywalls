@@ -26,20 +26,22 @@ public class MainActivity extends AppCompatActivity {
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentIndex > 0) {
+
                     currentIndex--;
+                    currentIndex=(currentIndex + imageIds.length)%3;
                     imageView.setImageResource(imageIds[currentIndex]);
-                }
+
             }
         });
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentIndex < imageIds.length - 1) {
+
                     currentIndex++;
+                    currentIndex=currentIndex%3;
                     imageView.setImageResource(imageIds[currentIndex]);
-                }
+
             }
         });
     }
